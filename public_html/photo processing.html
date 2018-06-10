@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-06-10 Sun 12:56 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Photo Processing</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Jack Baty" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='/css/styles.css' />
+</head>
+<body>
+<!-- Hide the first  --><div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> HOME </a>
+ |
+ <a accesskey="b" href="https://baty.net"> Baty.net &#8594; </a>
+</div><div id="content">
+<h1 class="title">Photo Processing</h1>
+
+<div id="outline-container-orgd411fe7" class="outline-2">
+<h2 id="orgd411fe7">Film Processing Steps&#xa0;&#xa0;&#xa0;<span class="tag"><span class="photography">photography</span></span></h2>
+<div class="outline-text-2" id="text-orgd411fe7">
+<p>
+Added: <span class="timestamp-wrapper"><span class="timestamp">&lt;2015-09-29 Tue&gt;</span></span>
+</p>
+</div>
+<div id="outline-container-org4713715" class="outline-3">
+<h3 id="org4713715">Workflow</h3>
+<div class="outline-text-3" id="text-org4713715">
+<p>
+When processing a roll of film, don't forget to do the following:
+</p>
+<ul class="org-ul">
+<li>Tag and caption using Photo Mechanic</li>
+<li>Rename photos with (Film Roll Sequence) YYYY Roll-00N<sub>HEADLINE</sub> using Photo Mechanic</li>
+<li>Use exiftool to add camera info See <a href="#orgf4addb4">Adding Exif data to scans</a></li>
+<li>Use exiftool to fix Date Taken 
+exiftool -v "-FileModifyDate&gt;DateTimeOriginal" -overwrite<sub>original</sub> .</li>
+<li>Move to Auto Import folder for Import into Lightroom</li>
+<li>Move to dated folder named like YYYY Roll-00N</li>
+<li>Upload to Flickr</li>
+<li>Add to logbook</li>
+</ul>
+
+<p>
+TEST
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaf861b0" class="outline-3">
+<h3 id="orgaf861b0">Scanning</h3>
+<div class="outline-text-3" id="text-orgaf861b0">
+</div>
+<ul class="org-ul">
+<li><a id="org4da95bb"></a>Using The Pakon<br />
+<div class="outline-text-5" id="text-org4da95bb">
+<p>
+Bought my (good one) from SerranoRay
+Position the DX code on top and lowest frame number first.
+Sometimes the scanner isn't found properly. So far, the following seems to work
+best:
+</p>
+<ul class="org-ul">
+<li>Boot Windows XP</li>
+<li>Turn on scanner</li>
+<li>Start PSI</li>
+</ul>
+
+<p>
+For Black and White, the film goes in numbers up and first-frame-first
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge7defd1" class="outline-2">
+<h2 id="orge7defd1">Digital Processing Steps</h2>
+<div class="outline-text-2" id="text-orge7defd1">
+<ul class="org-ul">
+<li>For iPhone, plug into iMac and let AutoImporter do the work (<sub>Inbox</sub>)</li>
+<li>For camera, ingest with Photo Mechanic to _Inbox</li>
+<li>Caption with Photo Mechanic and apply Stationery Pad</li>
+<li>Rename in Photo Mechanic (YYYY-MM-DD<sub>headline</sub> e.g. {iptcyear4}-{iptcmonth0}-{iptcday0}<sub>headline:lc</sub>)</li>
+<li>Move to Lightroom's Auto Import folder</li>
+<li>Move in Lightroom to YYYY/MM-Month YYYY/ folder</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf4addb4" class="outline-2">
+<h2 id="orgf4addb4">Adding Exif data to scans&#xa0;&#xa0;&#xa0;<span class="tag"><span class="photography">photography</span></span></h2>
+<div class="outline-text-2" id="text-orgf4addb4">
+<p>
+Added: <span class="timestamp-wrapper"><span class="timestamp">&lt;2015-09-29 Tue&gt;</span></span>
+</p>
+</div>
+<div id="outline-container-org62ee1a1" class="outline-3">
+<h3 id="org62ee1a1">Exiftool templates</h3>
+<div class="outline-text-3" id="text-org62ee1a1">
+<pre class="example">
+exiftool '-Make=Hasselblad' '-Model=500C/M' -overwrite_original .
+exiftool '-Make=Hasselblad' '-Model=503CXi' -overwrite_original .
+exiftool '-Make=Nikon' '-Model=F100' -overwrite_original .
+exiftool '-Make=Nikon' '-Model=F6' -overwrite_original .
+exiftool '-Make=Nikon' '-Model=F3' -overwrite_original .
+exiftool '-Make=Leica' '-Model=M4' -overwrite_original .
+exiftool '-Make=Leica' '-Model=M6' -overwrite_original .
+exiftool '-Make=Leica' '-Model=M3' -overwrite_original .
+exiftool '-Make=Leica' '-Model=M7' -overwrite_original .
+exiftool '-Make=Leica' '-Model=IIIf' -overwrite_original .
+exiftool '-Make=Canon' '-Model=EOS-1v' -overwrite_original .
+exiftool '-Make=Mamiya' '-Model=6' -overwrite_original .
+exiftool '-Make=Olympus' '-Model=Stylus Epic' -overwrite_original .
+exiftool '-Make=Olympus' '-Model=OM-2n' -overwrite_original .
+exiftool '-Make=Polaroid' '-Model=SX-70' -overwrite_original .
+exiftool '-Make=Ricoh'  '-Model=GR1' -overwrite_original .
+exiftool '-Make=Minolta' '-Model=Autocord' -overwrite_original .
+exiftool '-Make=Burke &amp; James' '-Model=4x5 Speed Press' -overwrite_original .
+exiftool '-Make=Graflex' '-Model=Speed Graphic' -overwrite_original .
+exiftool '-Make=Graflex' '-Model=Crown Graphic' -overwrite_original .
+
+</pre>
+</div>
+</div>
+<div id="outline-container-orgd70b115" class="outline-3">
+<h3 id="orgd70b115">Apply and Rename</h3>
+<div class="outline-text-3" id="text-orgd70b115">
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #4f97d7;">cd</span> ~/Pictures/_Scanning<span style="color: #2d9574;">\ </span>Inbox
+exiftool  <span style="color: #2d9574;">"-FileModifyDate&gt;DateTimeOriginal"</span> -overwrite_original .
+exiftool <span style="color: #2d9574;">'-m'</span> <span style="color: #2d9574;">'-Make=Hasselblad'</span> <span style="color: #2d9574;">'-Model=500C/M'</span> -overwrite_original .
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org592ff46" class="outline-4">
+<h4 id="org592ff46">I don't use the following any more.</h4>
+<div class="outline-text-4" id="text-org592ff46">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #4f97d7;">cd</span> ~/Pictures/_Scans/
+exiftool <span style="color: #2d9574;">'-FileName&lt;${CreateDate}_$Description%-c.%e'</span> -d %Y-%m-%d  .
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgff2f2ec" class="outline-2">
+<h2 id="orgff2f2ec">Sync and Backup</h2>
+<div class="outline-text-2" id="text-orgff2f2ec">
+</div>
+<div id="outline-container-orgc019333" class="outline-3">
+<h3 id="orgc019333">Sync</h3>
+<div class="outline-text-3" id="text-orgc019333">
+<p>
+I do not use iCloud sync. Instead, I import from the phone and delete. Once
+processed on the Mac and moved into the dated folders, Google Photos syncs them.
+I then use Google Photos on devices and other Macs to view and find photos.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orge09cd11" class="outline-2">
+<h2 id="orge09cd11">Notes</h2>
+<div class="outline-text-2" id="text-orge09cd11">
+<p>
+Just learned about AutoImporter option for camera raw imports
+</p>
+
+<p>
+<a href="http://www.engadget.com/2014/03/19/how-to-autoimport-your-iphone-photos-using-os-xs-image-capture/">http://www.engadget.com/2014/03/19/how-to-autoimport-your-iphone-photos-using-os-xs-image-capture/</a>
+</p>
+
+
+<p>
+AutoImporter.app lives here: /System/Library/Image Capture/Support/Application/AutoImporter.app
+</p>
+
+<p>
+I set preferences there to delete after import. The checkbox in Image Capture
+has no effect.
+</p>
+
+<p>
+2016-05-15 Tried Apple Photos. Nope. Back to Lightroom. 
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p>Author: Jack Baty <a href='mailto:<a href="mailto:jack@baty.net">jack@baty.net</a>' rel='author'><a href="mailto:jack@baty.net">jack@baty.net</a></a>.<br>
+Last update : 2018-06-10 Sun 11:31</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-06-10 Sun 13:24 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Linux and the ThinkPad</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Jack Baty" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='/css/styles.css' />
+</head>
+<body>
+<!-- Hide the first  --><div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> HOME </a>
+ |
+ <a accesskey="b" href="https://baty.net"> Baty.net &#8594; </a>
+</div><div id="content">
+<h1 class="title">Linux and the ThinkPad</h1>
+<p>
+Notes about my move to Linux on the ThinkPad
+</p>
+
+<div id="outline-container-orga67644b" class="outline-2">
+<h2 id="orga67644b">2018-01-28 Bought a Lenovo ThinkPad and installed Ubuntu on it. Here are my</h2>
+<div class="outline-text-2" id="text-orga67644b">
+<p>
+notes&#x2026;.
+</p>
+
+<p>
+Had to install dropbox .deb via sudo dpkg -i ./file.deb because it hung when just double-clicking the installer.
+</p>
+
+<p>
+sudo apt install gnome-tweak-tool
+sudo apt install vim
+</p>
+
+
+<p>
+Why does the Trackpad click usually show right-click menus?
+</p>
+
+<p>
+sudo apt install texlive-full
+</p>
+
+<p>
+sudo apt install ledger
+sudo apt install git
+sudo apt install zsh
+</p>
+
+<p>
+Installed oh-my-zsh
+</p>
+
+<p>
+sudo apt install pass
+sudo apt install pandoc
+</p>
+
+<p>
+Imported GPG keys from iMac
+</p>
+
+<p>
+sudo apt install isync
+</p>
+
+<p>
+got errors so installed isync from source
+</p>
+
+<p>
+Still got errors so installed OpenSSL and libraries
+</p>
+
+<p>
+sudo apt install libssl-dev
+</p>
+
+<p>
+Then configured isync
+</p>
+
+<pre class="example">
+./configure --with-ssl
+make
+sudo make install
+</pre>
+
+<p>
+Can't build emacs 25.x so updated via ppm as here:
+<a href="http://ubuntuhandbook.org/index.php/2017/04/install-emacs-25-ppa-ubuntu-16-04-14-04/">http://ubuntuhandbook.org/index.php/2017/04/install-emacs-25-ppa-ubuntu-16-04-14-04/</a>
+</p>
+
+<p>
+sudo apt install autoconf (so I can install mu4e from source)
+</p>
+
+<p>
+Installed mu4e using installation instructions and all dependencies
+</p>
+
+<p>
+Changed mu4e path in .spacemacs to include the /mu4e directory
+</p>
+
+<hr />
+
+
+<p>
+Installed Source Code Pro font (ttf versions)
+<a href="https://github.com/adobe-fonts/source-code-pro/releases/tag/2.030R-ro/1.050R-it">https://github.com/adobe-fonts/source-code-pro/releases/tag/2.030R-ro/1.050R-it</a>
+</p>
+
+
+<p>
+2018-01-30 Upgrading to 17.10 (from 16.04)
+</p>
+<pre class="example">
+sudo apt update &amp;&amp; sudo apt dist-upgrade
+sudo apt install update-manager-core
+sudo vi /etc/update-manager/release-upgrades
+(Change line to Prompt=normal)
+do-release-upgrade
+</pre>
+
+<p>
+2018-01-30 Reinstalled mu after upgrade
+</p>
+<pre class="example">
+sudo apt-get install libgmime-2.6-dev libxapian-dev
+sudo apt-get install guile-2.0-dev html2text xdg-utils
+git clone https://github.com/djcb/mu.git
+cd mu
+autoreconf -i &amp;&amp; ./configure &amp;&amp; make
+sudo make install
+</pre>
+
+<p>
+Two-finger scrolling wasn't working after the upgrade. Ran the following which
+fixed it:
+</p>
+<pre class="example">
+$ sudo modprobe -r psmouse
+$ sudo modprobe psmouse
+</pre>
+
+<p>
+couldn't encrypt using Pass so had to do&#x2026;
+</p>
+
+<p>
+gpg &#x2013;edit-key KEYID
+&gt; trust
+</p>
+
+
+<p>
+2018-01-31 Installed msttcorefonts to get Times New Roman for LaTeX
+</p>
+
+<p>
+I sure hate the trackpad
+</p>
+
+<p>
+Had to do the psmouse thing again after a reboot. Is this really necessary every
+time? Created a script in ~/bin/fixscrolling to make it easier.
+</p>
+
+<p>
+No longer using the Dropboxed version of .emacs.d because builds of certain
+extensions don't seem to be compatible between Mac and Linux
+</p>
+
+
+<p>
+2018-02-03 Still getting "Error parsing PCC subspaces from PCCT" on boot
+</p>
+
+<p>
+ubuntu unable to create a DBus proxy
+</p>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orged0bc72" class="outline-2">
+<h2 id="orged0bc72">2018-02-03 Manjaro i3</h2>
+<div class="outline-text-2" id="text-orged0bc72">
+</div>
+<div id="outline-container-org0acfa37" class="outline-3">
+<h3 id="org0acfa37">Installed from ISO. Ignored warnings about hardware because I couldn't read them</h3>
+<div class="outline-text-3" id="text-org0acfa37">
+<p>
+$ sudo pacman -Syu
+</p>
+
+<p>
+$ sudo pacman -S firefox-developer-edition
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1716384" class="outline-3">
+<h3 id="org1716384">Mapped Caps Lock to Control</h3>
+<div class="outline-text-3" id="text-org1716384">
+<p>
+$ setxkbmap -option ctrl:nocaps
+</p>
+
+<p>
+Another option might be <a href="https://github.com/alols/xcape">https://github.com/alols/xcape</a>
+</p>
+
+<p>
+Better yet, use .Xmodmap
+</p>
+
+<pre class="example">
+clear lock
+clear control
+keycode 66 = Control_L
+add control = Control_L Control_R
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgbc339ae" class="outline-3">
+<h3 id="orgbc339ae">Tweaked trackpad behavior</h3>
+<div class="outline-text-3" id="text-orgbc339ae">
+<p>
+Updated libinput configuration for Natural Scrolling and better click behavior
+on the Trackpad
+</p>
+
+<p>
+$ sudo vi /etc/X11/xorg.conf.d/30-touchpad.conf
+</p>
+
+<p>
+Added the following
+</p>
+
+<p>
+Option "NaturalScrolling" "true"
+Option "ClickMethod" "clickfinger"
+</p>
+
+<p>
+Disabled click to tap by setting: "Tapping" "off"
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge88803f" class="outline-3">
+<h3 id="orge88803f">Installed zsh</h3>
+<div class="outline-text-3" id="text-orge88803f">
+<p>
+$ sudo pacman -S zsh
+</p>
+</div>
+</div>
+
+<div id="outline-container-org80e9ca9" class="outline-3">
+<h3 id="org80e9ca9">Installed yaourt so I could install dropbox via AUR</h3>
+<div class="outline-text-3" id="text-org80e9ca9">
+<p>
+$ sudo pacman -S yaourt
+</p>
+
+<p>
+Then 
+</p>
+
+<p>
+$ yaourt dropbox
+</p>
+
+<p>
+Selected #10 and go. Ignored warning about unsupported package
+</p>
+</div>
+</div>
+
+<div id="outline-container-org244a750" class="outline-3">
+<h3 id="org244a750">Installed Emacs 25.x</h3>
+<div class="outline-text-3" id="text-org244a750">
+<p>
+$ sudo pacman -S emacs
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7bba6c0" class="outline-3">
+<h3 id="org7bba6c0">Installed mbsync</h3>
+<div class="outline-text-3" id="text-org7bba6c0">
+<p>
+$ sudo pacman -S isync
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8dbdd45" class="outline-3">
+<h3 id="org8dbdd45">Imported gpg key from imac</h3>
+<div class="outline-text-3" id="text-org8dbdd45">
+<p>
+$ gpg &#x2013;import ~/secret-imac
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1c2af57" class="outline-3">
+<h3 id="org1c2af57">Installed LaTeX</h3>
+<div class="outline-text-3" id="text-org1c2af57">
+<p>
+$ sudo pacman -S texlive-most
+</p>
+</div>
+</div>
+
+<div id="outline-container-org56e77da" class="outline-3">
+<h3 id="org56e77da">Removed shortcut widget from desktop</h3>
+<div class="outline-text-3" id="text-org56e77da">
+<p>
+It's run by conky.
+</p>
+
+<p>
+$ sudo vi /usr/bin/start<sub>conky</sub><sub>maia</sub>
+</p>
+
+<p>
+Remove the line with shortcut option
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6ce46ef" class="outline-3">
+<h3 id="org6ce46ef">Installed mu/mu4e</h3>
+<div class="outline-text-3" id="text-org6ce46ef">
+<p>
+$ pacman -S mu
+</p>
+
+<p>
+Symlinked /usr/bin/mu from /usr/local/bin/mu 
+</p>
+</div>
+</div>
+<div id="outline-container-org43710e0" class="outline-3">
+<h3 id="org43710e0">Installed aspell and ispell</h3>
+<div class="outline-text-3" id="text-org43710e0">
+<p>
+Fixes emacs startup errors
+$ sudo pacman -S aspell
+$ sudo pacman -S ispell
+</p>
+
+<p>
+Didn't work so I disabled the spell-checking layer
+</p>
+</div>
+</div>
+<div id="outline-container-org4bb065a" class="outline-3">
+<h3 id="org4bb065a">Installed Source Code Pro font</h3>
+<div class="outline-text-3" id="text-org4bb065a">
+<p>
+$ sudo pacman -S adobe-source-code-pro-fonts
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0a22a84" class="outline-3">
+<h3 id="org0a22a84">Installed the No Squint plugin for Firefox</h3>
+<div class="outline-text-3" id="text-org0a22a84">
+<p>
+Damn small fonts everywhere
+</p>
+</div>
+</div>
+<div id="outline-container-orga7bf0e0" class="outline-3">
+<h3 id="orga7bf0e0">Installed pulseaudio so sound would work</h3>
+<div class="outline-text-3" id="text-orga7bf0e0">
+<p>
+install<sub>pulse</sub>. Then went to Audio-&gt;Pulse Audio and configured.
+Rebooted and now I have sound.
+</p>
+</div>
+</div>
+<div id="outline-container-orgcaf6a50" class="outline-3">
+<h3 id="orgcaf6a50">Installed ag for search</h3>
+<div class="outline-text-3" id="text-orgcaf6a50">
+<p>
+$ sudo pacman -S the<sub>silver</sub><sub>searcher</sub>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5ac1ad8" class="outline-2">
+<h2 id="org5ac1ad8">To Try</h2>
+<div class="outline-text-2" id="text-org5ac1ad8">
+<p>
+Krita for photo editing
+Cerbero for Alfred replacement
+</p>
+</div>
+</div>
+<div id="outline-container-orgfbc6412" class="outline-2">
+<h2 id="orgfbc6412">Log</h2>
+<div class="outline-text-2" id="text-orgfbc6412">
+<ul class="org-ul">
+<li>Installed VS Code</li>
+</ul>
+<p>
+youart -S microsoft-visual-studio-bin
+</p>
+<ul class="org-ul">
+<li><p>
+Installed firefox instead of firefox-developer-edition
+</p>
+
+<p>
+yasnippet
+</p></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-lisp">&#0;# -*- coding: utf-8 -*-
+# name: date
+# key: date
+# --
+`<span style="color: #4f97d7;">(</span>format-time-string <span style="color: #2d9574;">"%Y-%m-%d"</span><span style="color: #4f97d7;">)</span>`$0
+</pre>
+</div>
+
+<p>
+2018-02-14 Installed feh for default image viewer
+</p>
+
+<p>
+2018-03-03 Installed Hack font (ttf-hack) and used it for urxvt
+</p>
+
+<p>
+Edit .Xresources and changed font to hack
+</p>
+
+<p>
+URxvt*.font: xft:Hack:Regular:size=10
+URxvt.bold.font: xft:Hack:Bold:size=10
+</p>
+
+<p>
+Set Dropbox to start automatically
+<a href="https://fedoramagazine.org/getting-started-i3-window-manager/">https://fedoramagazine.org/getting-started-i3-window-manager/</a>
+</p>
+
+<p>
+exec &#x2013;no-startup-id dropbox start
+</p>
+
+
+<p>
+2018-03-28 Installed XFCE. Whisker Menu
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p>Author: Jack Baty <a href='mailto:<a href="mailto:jack@baty.net">jack@baty.net</a>' rel='author'><a href="mailto:jack@baty.net">jack@baty.net</a></a>.<br>
+Last update : 2018-06-10 Sun 13:23</p>
+</div>
+</body>
+</html>

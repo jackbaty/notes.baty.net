@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-06-10 Sun 13:22 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Amazon Web Services</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Jack Baty" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='/css/styles.css' />
+</head>
+<body>
+<!-- Hide the first  --><div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> HOME </a>
+ |
+ <a accesskey="b" href="https://baty.net"> Baty.net &#8594; </a>
+</div><div id="content">
+<h1 class="title">Amazon Web Services</h1>
+
+
+<div id="outline-container-orgd604860" class="outline-2">
+<h2 id="orgd604860">Useful Links</h2>
+<div class="outline-text-2" id="text-orgd604860">
+<p>
+<a href="http://calculator.s3.amazonaws.com/index.html">Pricing Calculator</a>
+<a href="https://www.airpair.com/aws/posts/building-a-scalable-web-app-on-amazon-web-services-p1">A Comprehensive Guide to Building a Scalable Web App on Amazon Web Services - Part 1 </a>
+<a href="https://www.josephecombs.com/2018/03/05/how-to-make-an-AWS-S3-static-website-with-ssl">https://www.josephecombs.com/2018/03/05/how-to-make-an-AWS-S3-static-website-with-ssl</a>
+<a href="http://benjamincongdon.me/blog/2017/06/13/Deploying-and-Deploying-a-Static-Site-to-AWS-with-S3-and-Cloudfront/">http://benjamincongdon.me/blog/2017/06/13/Deploying-and-Deploying-a-Static-Site-to-AWS-with-S3-and-Cloudfront/</a>
+<a href="https://wblinks.com/notes/aws-tips-i-wish-id-known-before-i-started/">https://wblinks.com/notes/aws-tips-i-wish-id-known-before-i-started/</a>
+<a href="https://www.youtube.com/watch?v=Zd5hsL-JNY4">A Day in the Life of a Billion Packets</a>
+<a href="https://www.airpair.com/aws/posts/building-a-scalable-web-app-on-amazon-web-services-p1">https://www.airpair.com/aws/posts/building-a-scalable-web-app-on-amazon-web-services-p1</a>
+<a href="https://www.terraform.io/">Terraform</a> - Deployment automation
+<a href="https://stackoverflow.com/questions/38671818/how-to-deploy-with-gitlab-ci-to-ec2-using-aws-codedeploy-codepipeline-s3#38672045">https://stackoverflow.com/questions/38671818/how-to-deploy-with-gitlab-ci-to-ec2-using-aws-codedeploy-codepipeline-s3#38672045</a>
+<a href="https://github.com/phpchap/aws-organisation-account-create">https://github.com/phpchap/aws-organisation-account-create</a>
+<a href="https://aws.amazon.com/blogs/security/writing-iam-policies-grant-access-to-user-specific-folders-in-an-amazon-s3-bucket/">Writing IAM Policies: Grant Access to User-Specific Folders in an Amazon S3 B&#x2026;</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org43dad72" class="outline-2">
+<h2 id="org43dad72">Tips</h2>
+<div class="outline-text-2" id="text-org43dad72">
+<p>
+A bucket policy is needed for making sure new files stay world-readable. Not
+needed when using s3deploy?
+Public read-only recursive bucket policy example:
+</p>
+<pre class="example">
+{
+   "Version": "2008-10-17",
+   "Statement": [
+       {
+           "Sid": "PublicReadGetObject",
+           "Effect": "Allow",
+           "Principal": {
+               "AWS": "*"
+           },
+           "Action": "s3:GetObject",
+           "Resource": "arn:aws:s3:::bucketname.something.com/*"
+       }
+   ]
+}  
+</pre>
+
+<p>
+<a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenario2.html">https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenario2.html</a>
+</p>
+
+<p>
+Use wizard to create VPC
+</p>
+
+<p>
+Point Cloudfront distributions to the website URL not the bucket so that
+subdirectories find /index.html files.
+</p>
+
+
+<p>
+Multiple Roles
+<a href="https://aws.amazon.com/blogs/aws/new-cross-account-access-in-the-aws-management-console/">https://aws.amazon.com/blogs/aws/new-cross-account-access-in-the-aws-management-console/</a>
+<a href="https://aws.amazon.com/blogs/security/enable-a-new-feature-in-the-aws-management-console-cross-account-access/">https://aws.amazon.com/blogs/security/enable-a-new-feature-in-the-aws-management-console-cross-account-access/</a>
+</p>
+
+
+<p>
+RDS in VPC
+<a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.InstanceInVPC">https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.InstanceInVPC</a>
+</p>
+
+<p>
+List bucket contents and get total size example:
+</p>
+<pre class="example">
+aws s3 ls --summarize --human-readable --recursive s3://www.baty.net
+</pre>
+
+<p>
+Handling multiple profiles in the aws cli
+<a href="https://blog.jayway.com/2015/09/25/aws-cli-profile-management-made-easy/">AWS-CLI Profile Management Made Easy - Jayway</a>
+</p>
+
+<p>
+Getting a list of EC2 instances for a region via the cli using `jq`
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">aws ec2 describe-instances --region us-east-1 | jq <span style="color: #2d9574;">".Reservations[].Instances[] | {name: .KeyName, type: .InstanceType, state: .State.Name}"</span>
+</pre>
+</div>
+
+
+<p>
+Migrating or upgrading MySQL RDS
+<a href="https://zapier.com/engineering/mysql-upgrade-downtime/">How to Work Around RDS Limitations to Minimize MySQL Upgrades Downtime - The &#x2026;</a>
+</p>
+
+<p>
+Assuming a Role in another account. Substitute the ARN.
+</p>
+<pre class="example">
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "sts:AssumeRole",
+      "Resource": "arn:aws:iam::123456789012:role/RoleNameInTargetAccount"
+    }
+  ]
+}
+</pre>
+
+<p>
+<a href="https://blog.vizuri.com/how-to-copy/move-objects-from-one-s3-bucket-to-another-between-aws-accounts">How to Copy or Move Objects from one S3 bucket to another between AWS Account&#x2026;</a>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p>Author: Jack Baty <a href='mailto:<a href="mailto:jack@baty.net">jack@baty.net</a>' rel='author'><a href="mailto:jack@baty.net">jack@baty.net</a></a>.<br>
+Last update : 2018-06-10 Sun 13:13</p>
+</div>
+</body>
+</html>
