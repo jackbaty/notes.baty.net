@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-06-10 Sun 12:56 -->
+<!-- 2018-06-13 Wed 17:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Photo Processing</title>
@@ -11,6 +11,22 @@
 <meta name="author" content="Jack Baty" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel='stylesheet' href='/css/styles.css' />
+<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["disableCookies"]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//piwik.baty.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '6']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
 </head>
 <body>
 <!-- Hide the first  --><div id="org-div-home-and-up">
@@ -103,26 +119,26 @@ Added: <span class="timestamp-wrapper"><span class="timestamp">&lt;2015-09-29 Tu
 <h3 id="org62ee1a1">Exiftool templates</h3>
 <div class="outline-text-3" id="text-org62ee1a1">
 <pre class="example">
-exiftool '-Make=Hasselblad' '-Model=500C/M' -overwrite_original .
-exiftool '-Make=Hasselblad' '-Model=503CXi' -overwrite_original .
-exiftool '-Make=Nikon' '-Model=F100' -overwrite_original .
-exiftool '-Make=Nikon' '-Model=F6' -overwrite_original .
-exiftool '-Make=Nikon' '-Model=F3' -overwrite_original .
-exiftool '-Make=Leica' '-Model=M4' -overwrite_original .
-exiftool '-Make=Leica' '-Model=M6' -overwrite_original .
-exiftool '-Make=Leica' '-Model=M3' -overwrite_original .
-exiftool '-Make=Leica' '-Model=M7' -overwrite_original .
-exiftool '-Make=Leica' '-Model=IIIf' -overwrite_original .
-exiftool '-Make=Canon' '-Model=EOS-1v' -overwrite_original .
-exiftool '-Make=Mamiya' '-Model=6' -overwrite_original .
-exiftool '-Make=Olympus' '-Model=Stylus Epic' -overwrite_original .
-exiftool '-Make=Olympus' '-Model=OM-2n' -overwrite_original .
-exiftool '-Make=Polaroid' '-Model=SX-70' -overwrite_original .
-exiftool '-Make=Ricoh'  '-Model=GR1' -overwrite_original .
-exiftool '-Make=Minolta' '-Model=Autocord' -overwrite_original .
-exiftool '-Make=Burke &amp; James' '-Model=4x5 Speed Press' -overwrite_original .
-exiftool '-Make=Graflex' '-Model=Speed Graphic' -overwrite_original .
-exiftool '-Make=Graflex' '-Model=Crown Graphic' -overwrite_original .
+exiftool '-m' '-Make=Hasselblad' '-Model=500C/M' -overwrite_original .
+exiftool '-m' '-Make=Hasselblad' '-Model=503CXi' -overwrite_original .
+exiftool '-m' '-Make=Nikon' '-Model=F100' -overwrite_original .
+exiftool '-m' '-Make=Nikon' '-Model=F6' -overwrite_original .
+exiftool '-m' '-Make=Nikon' '-Model=F3' -overwrite_original .
+exiftool '-m' '-Make=Leica' '-Model=M4' -overwrite_original .
+exiftool '-m' '-Make=Leica' '-Model=M6' -overwrite_original .
+exiftool '-m' '-Make=Leica' '-Model=M3' -overwrite_original .
+exiftool '-m' '-Make=Leica' '-Model=M7' -overwrite_original .
+exiftool '-m' '-Make=Leica' '-Model=IIIf' -overwrite_original .
+exiftool '-m' '-Make=Canon' '-Model=EOS-1v' -overwrite_original .
+exiftool '-m' '-Make=Mamiya' '-Model=6' -overwrite_original .
+exiftool '-m' '-Make=Olympus' '-Model=Stylus Epic' -overwrite_original .
+exiftool '-m' '-Make=Olympus' '-Model=OM-2n' -overwrite_original .
+exiftool '-m' '-Make=Polaroid' '-Model=SX-70' -overwrite_original .
+exiftool '-m' '-Make=Ricoh'  '-Model=GR1' -overwrite_original .
+exiftool '-m' '-Make=Minolta' '-Model=Autocord' -overwrite_original .
+exiftool '-m' '-Make=Burke &amp; James' '-Model=4x5 Speed Press' -overwrite_original .
+exiftool '-m' '-Make=Graflex' '-Model=Speed Graphic' -overwrite_original .
+exiftool '-m' '-Make=Graflex' '-Model=Crown Graphic' -overwrite_original .
 
 </pre>
 </div>
@@ -133,7 +149,13 @@ exiftool '-Make=Graflex' '-Model=Crown Graphic' -overwrite_original .
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #4f97d7;">cd</span> ~/Pictures/_Scanning<span style="color: #2d9574;">\ </span>Inbox
 exiftool  <span style="color: #2d9574;">"-FileModifyDate&gt;DateTimeOriginal"</span> -overwrite_original .
-exiftool <span style="color: #2d9574;">'-m'</span> <span style="color: #2d9574;">'-Make=Hasselblad'</span> <span style="color: #2d9574;">'-Model=500C/M'</span> -overwrite_original .
+exiftool <span style="color: #2d9574;">'-m'</span> <span style="color: #2d9574;">'-Make=Graflex'</span> <span style="color: #2d9574;">'-Model=Crown Graphic'</span> -overwrite_original .
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #4f97d7;">cd</span> <span style="color: #2d9574;">"~/Pictures/Photos/2018/Large Format 2018/"</span>
+exiftool <span style="color: #2d9574;">'-m'</span> <span style="color: #2d9574;">'-Make=Graflex'</span> <span style="color: #2d9574;">'-Model=Crown Graphic'</span> -overwrite_original <span style="color: #2d9574;">'2018-LF014 Self-portrait-Edit.tif'</span>
 </pre>
 </div>
 </div>
@@ -195,7 +217,7 @@ has no effect.
 </div>
 <div id="postamble" class="status">
 <p>Author: Jack Baty <a href='mailto:<a href="mailto:jack@baty.net">jack@baty.net</a>' rel='author'><a href="mailto:jack@baty.net">jack@baty.net</a></a>.<br>
-Last update : 2018-06-10 Sun 11:31</p>
+Last update : 2018-06-10 Sun 19:35</p>
 </div>
 </body>
 </html>
