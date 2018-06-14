@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-06-13 Wed 17:20 -->
+<!-- 2018-06-14 Thu 13:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>Static Sites Using Caddy</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Jack Baty" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,12 +34,13 @@
  |
  <a accesskey="b" href="https://baty.net"> Baty.net &#8594; </a>
 </div><div id="content">
-<div id="outline-container-orgde6a677" class="outline-2">
-<h2 id="orgde6a677">Running Caddy on Ubuntu 16.04</h2>
-<div class="outline-text-2" id="text-orgde6a677">
+<h1 class="title">Static Sites Using Caddy</h1>
+<div id="outline-container-org1874998" class="outline-2">
+<h2 id="org1874998">Running Caddy on Ubuntu 16.04</h2>
+<div class="outline-text-2" id="text-org1874998">
 <p>
-Stood up a tiny Lightsail instance
-Added HTTPS to allowed network connections
+Stood up a tiny Lightsail instance <br />
+Added HTTPS to allowed network connections <br />
 Attached elastic (static) IP address
 </p>
 
@@ -84,12 +85,38 @@ I changed the paths from /opt/caddy to /home/jbaty since I'm the only one on the
 server and I don't want to edit files in /etc/whatever every time I need to make
 a change.
 </p>
+
+<p>
+Restarting Caddy
+</p>
+
+<p>
+<code>sudo systemctl restart caddy.service</code>
+</p>
+
+
+<p>
+Changed log format in Caddyfile&#x2026;
+</p>
+
+<pre class="example">
+static.baty.net {
+  root /home/jbaty/apps/static
+  log / /home/jbaty/logs/static.baty.net.log "{combined}"
+  gzip
+  browse
+}
+</pre>
+
+<p>
+This was so <a href="GoAccess.html">GoAccess</a> works better (combined vs common log formats)
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p>Author: Jack Baty <a href='mailto:<a href="mailto:jack@baty.net">jack@baty.net</a>' rel='author'><a href="mailto:jack@baty.net">jack@baty.net</a></a>.<br>
-Last update : 2018-06-13 Wed 17:08</p>
+Last update : 2018-06-14 Thu 09:14</p>
 </div>
 </body>
 </html>
