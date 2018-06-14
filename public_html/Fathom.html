@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-06-14 Thu 08:40 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fathom Analytics</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Jack Baty" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='/css/styles.css' />
+<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["disableCookies"]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//piwik.baty.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '6']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+</head>
+<body>
+<!-- Hide the first  --><div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> HOME </a>
+ |
+ <a accesskey="b" href="https://baty.net"> Baty.net &#8594; </a>
+</div><div id="content">
+<h1 class="title">Fathom Analytics</h1>
+<p>
+Using Fathom on baty.net for web analytics. This is hopefully able to replace
+Matomo, which is a bit heavy. 1.0 was released this week.
+</p>
+
+<p>
+<a href="https://github.com/usefathom/fathom">https://github.com/usefathom/fathom</a>
+</p>
+
+<p>
+Set up according to configuration instructions in Github.
+</p>
+
+<p>
+It's in /home/jbaty/apps/fathom
+</p>
+
+<p>
+Configured to launch at startup using:
+</p>
+
+<pre class="example">
+[Unit]
+Description=Starts the fathom server
+Requires=network.target
+After=network.target
+
+[Service]
+Type=simple
+User=jbaty
+Restart=always
+WorkingDirectory=/home/jbaty/apps/fathom
+ExecStart=/usr/local/bin/fathom server
+
+[Install]
+WantedBy=multi-user.target
+</pre>
+</div>
+<div id="postamble" class="status">
+<p>Author: Jack Baty <a href='mailto:<a href="mailto:jack@fusionary.com">jack@fusionary.com</a>' rel='author'><a href="mailto:jack@fusionary.com">jack@fusionary.com</a></a>.<br>
+Last update : 2018-06-14 Thu 08:39</p>
+</div>
+</body>
+</html>

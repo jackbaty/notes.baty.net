@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-06-14 Thu 08:40 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GoAccess</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Jack Baty" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='/css/styles.css' />
+<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["disableCookies"]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//piwik.baty.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '6']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+</head>
+<body>
+<!-- Hide the first  --><div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> HOME </a>
+ |
+ <a accesskey="b" href="https://baty.net"> Baty.net &#8594; </a>
+</div><div id="content">
+<h1 class="title">GoAccess</h1>
+<p>
+<a href="https://goaccess.io/">https://goaccess.io/</a>
+</p>
+
+<p>
+Installed on static.baty.net using the usual apt-get process but that gave me a
+very old version so did the following
+</p>
+
+<pre class="example">
+$ echo "deb http://deb.goaccess.io/ $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/goaccess.list 
+$ wget -O - https://deb.goaccess.io/gnugpg.key | sudo apt-key add - 
+$ sudo apt-get update 
+$ sudo apt-get install goaccess
+</pre>
+
+
+<p>
+Created separate host for goaccess.baty.net so I can run real-time reports. They
+don't work over HTTPS yet so goaccess.baty.net is configured to run on port 80
+</p>
+
+<p>
+<a href="http://goaccess.baty.net/static-live.baty.net.html">http://goaccess.baty.net/static-live.baty.net.html</a>
+</p>
+</div>
+<div id="postamble" class="status">
+<p>Author: Jack Baty <a href='mailto:<a href="mailto:jack@fusionary.com">jack@fusionary.com</a>' rel='author'><a href="mailto:jack@fusionary.com">jack@fusionary.com</a></a>.<br>
+Last update : 2018-06-13 Wed 20:49</p>
+</div>
+</body>
+</html>
