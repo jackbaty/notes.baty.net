@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-06-14 Thu 13:13 -->
+<!-- 2018-06-16 Sat 10:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Photo Processing</title>
@@ -36,23 +36,23 @@
 </div><div id="content">
 <h1 class="title">Photo Processing</h1>
 
-<div id="outline-container-org6ef26eb" class="outline-2">
-<h2 id="org6ef26eb">Film Processing Steps&#xa0;&#xa0;&#xa0;<span class="tag"><span class="photography">photography</span></span></h2>
-<div class="outline-text-2" id="text-org6ef26eb">
+<div id="outline-container-orgd411fe7" class="outline-2">
+<h2 id="orgd411fe7">Film Processing Steps&#xa0;&#xa0;&#xa0;<span class="tag"><span class="photography">photography</span></span></h2>
+<div class="outline-text-2" id="text-orgd411fe7">
 <p>
 Added: <span class="timestamp-wrapper"><span class="timestamp">&lt;2015-09-29 Tue&gt;</span></span>
 </p>
 </div>
-<div id="outline-container-org3e4a5d2" class="outline-3">
-<h3 id="org3e4a5d2">Workflow</h3>
-<div class="outline-text-3" id="text-org3e4a5d2">
+<div id="outline-container-org4713715" class="outline-3">
+<h3 id="org4713715">Workflow</h3>
+<div class="outline-text-3" id="text-org4713715">
 <p>
 When processing a roll of film, don't forget to do the following:
 </p>
 <ul class="org-ul">
 <li>Tag and caption using Photo Mechanic</li>
 <li>Rename photos with (Film Roll Sequence) YYYY Roll-00N<sub>HEADLINE</sub> using Photo Mechanic</li>
-<li>Use exiftool to add camera info See <a href="#orga4d1c55">Adding Exif data to scans</a></li>
+<li>Use exiftool to add camera info See <a href="#orgf4addb4">Adding Exif data to scans</a></li>
 <li>Use exiftool to fix Date Taken 
 exiftool -v "-FileModifyDate&gt;DateTimeOriginal" -overwrite<sub>original</sub> .</li>
 <li>Move to Auto Import folder for Import into Lightroom</li>
@@ -67,13 +67,13 @@ TEST
 </div>
 </div>
 
-<div id="outline-container-org2c16453" class="outline-3">
-<h3 id="org2c16453">Scanning</h3>
-<div class="outline-text-3" id="text-org2c16453">
+<div id="outline-container-orgaf861b0" class="outline-3">
+<h3 id="orgaf861b0">Scanning</h3>
+<div class="outline-text-3" id="text-orgaf861b0">
 </div>
 <ul class="org-ul">
-<li><a id="orgdc50c09"></a>Using The Pakon<br />
-<div class="outline-text-5" id="text-orgdc50c09">
+<li><a id="org4da95bb"></a>Using The Pakon<br />
+<div class="outline-text-5" id="text-org4da95bb">
 <p>
 Bought my (good one) from SerranoRay
 Position the DX code on top and lowest frame number first.
@@ -95,9 +95,9 @@ For Black and White, the film goes in numbers up and first-frame-first
 </div>
 </div>
 
-<div id="outline-container-org14a6a84" class="outline-2">
-<h2 id="org14a6a84">Digital Processing Steps</h2>
-<div class="outline-text-2" id="text-org14a6a84">
+<div id="outline-container-orge7defd1" class="outline-2">
+<h2 id="orge7defd1">Digital Processing Steps</h2>
+<div class="outline-text-2" id="text-orge7defd1">
 <ul class="org-ul">
 <li>For iPhone, plug into iMac and let AutoImporter do the work (<sub>Inbox</sub>)</li>
 <li>For camera, ingest with Photo Mechanic to _Inbox</li>
@@ -108,16 +108,16 @@ For Black and White, the film goes in numbers up and first-frame-first
 </ul>
 </div>
 </div>
-<div id="outline-container-orga4d1c55" class="outline-2">
-<h2 id="orga4d1c55">Adding Exif data to scans&#xa0;&#xa0;&#xa0;<span class="tag"><span class="photography">photography</span></span></h2>
-<div class="outline-text-2" id="text-orga4d1c55">
+<div id="outline-container-orgf4addb4" class="outline-2">
+<h2 id="orgf4addb4">Adding Exif data to scans&#xa0;&#xa0;&#xa0;<span class="tag"><span class="photography">photography</span></span></h2>
+<div class="outline-text-2" id="text-orgf4addb4">
 <p>
 Added: <span class="timestamp-wrapper"><span class="timestamp">&lt;2015-09-29 Tue&gt;</span></span>
 </p>
 </div>
-<div id="outline-container-org42d39d8" class="outline-3">
-<h3 id="org42d39d8">Exiftool templates</h3>
-<div class="outline-text-3" id="text-org42d39d8">
+<div id="outline-container-org62ee1a1" class="outline-3">
+<h3 id="org62ee1a1">Exiftool templates</h3>
+<div class="outline-text-3" id="text-org62ee1a1">
 <pre class="example">
 exiftool '-m' '-Make=Hasselblad' '-Model=500C/M' -overwrite_original .
 exiftool '-m' '-Make=Hasselblad' '-Model=503CXi' -overwrite_original .
@@ -143,9 +143,9 @@ exiftool '-m' '-Make=Graflex' '-Model=Crown Graphic' -overwrite_original .
 </pre>
 </div>
 </div>
-<div id="outline-container-org1c17a34" class="outline-3">
-<h3 id="org1c17a34">Apply and Rename</h3>
-<div class="outline-text-3" id="text-org1c17a34">
+<div id="outline-container-orgd70b115" class="outline-3">
+<h3 id="orgd70b115">Apply and Rename</h3>
+<div class="outline-text-3" id="text-orgd70b115">
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #4f97d7;">cd</span> ~/Pictures/_Scanning<span style="color: #2d9574;">\ </span>Inbox
 exiftool  <span style="color: #2d9574;">"-FileModifyDate&gt;DateTimeOriginal"</span> -overwrite_original .
@@ -160,9 +160,9 @@ exiftool <span style="color: #2d9574;">'-m'</span> <span style="color: #2d9574;"
 </div>
 </div>
 
-<div id="outline-container-org23b7c3f" class="outline-4">
-<h4 id="org23b7c3f">I don't use the following any more.</h4>
-<div class="outline-text-4" id="text-org23b7c3f">
+<div id="outline-container-org592ff46" class="outline-4">
+<h4 id="org592ff46">I don't use the following any more.</h4>
+<div class="outline-text-4" id="text-org592ff46">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #4f97d7;">cd</span> ~/Pictures/_Scans/
 exiftool <span style="color: #2d9574;">'-FileName&lt;${CreateDate}_$Description%-c.%e'</span> -d %Y-%m-%d  .
@@ -173,13 +173,13 @@ exiftool <span style="color: #2d9574;">'-FileName&lt;${CreateDate}_$Description%
 </div>
 </div>
 
-<div id="outline-container-org979679b" class="outline-2">
-<h2 id="org979679b">Sync and Backup</h2>
-<div class="outline-text-2" id="text-org979679b">
+<div id="outline-container-orgff2f2ec" class="outline-2">
+<h2 id="orgff2f2ec">Sync and Backup</h2>
+<div class="outline-text-2" id="text-orgff2f2ec">
 </div>
-<div id="outline-container-orgeb66992" class="outline-3">
-<h3 id="orgeb66992">Sync</h3>
-<div class="outline-text-3" id="text-orgeb66992">
+<div id="outline-container-orgc019333" class="outline-3">
+<h3 id="orgc019333">Sync</h3>
+<div class="outline-text-3" id="text-orgc019333">
 <p>
 I do not use iCloud sync. Instead, I import from the phone and delete. Once
 processed on the Mac and moved into the dated folders, Google Photos syncs them.
@@ -188,9 +188,9 @@ I then use Google Photos on devices and other Macs to view and find photos.
 </div>
 </div>
 </div>
-<div id="outline-container-org9e97dc4" class="outline-2">
-<h2 id="org9e97dc4">Notes</h2>
-<div class="outline-text-2" id="text-org9e97dc4">
+<div id="outline-container-orge09cd11" class="outline-2">
+<h2 id="orge09cd11">Notes</h2>
+<div class="outline-text-2" id="text-orge09cd11">
 <p>
 Just learned about AutoImporter option for camera raw imports
 </p>
